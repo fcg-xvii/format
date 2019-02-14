@@ -20,7 +20,7 @@ func getCode(code ...string) string {
 
 func Phone(source string, code ...string) (phone string, check bool) {
 	phone = phoneRegReplace.ReplaceAllString(source, "")
-	if check = phoneRegReplace.MatchString(phone); check && phone[0] != '+' {
+	if check = phoneRegCheck.MatchString(phone); check && phone[0] != '+' {
 		phone = getCode(code...) + phone[1:]
 	}
 	return
